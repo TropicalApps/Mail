@@ -2,14 +2,14 @@
 
 namespace TropicalApps\Mail;
 
-use Illuminate\Mail\TransportManager;
+use Illuminate\Mail\TransportManager as Manager;
 use Mail\PostmarkTransport;
 use \Postmark\Transport;
 
 /**
 * Custom Mail Class
 */
-class CustomTransportManager extends TransportManager
+class TransportManager extends Manager
 {
     /**
      * Create an instance of the Postmark Swift Transport driver.

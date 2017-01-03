@@ -5,7 +5,7 @@ namespace TropicalApps\Mail;
 use Swift_Mailer;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Mail\MailServiceProvider;
-use Mail\CustomTransportManager;
+use TropicalApps\Mail\TransportManager;
 
 class CustomMailServiceProvider extends MailServiceProvider
 {
@@ -18,7 +18,7 @@ class CustomMailServiceProvider extends MailServiceProvider
     protected function registerSwiftTransport()
     {
         $this->app['swift.transport'] = $this->app->share(function ($app) {
-            return new CustomTransportManager($app);
+            return new TransportManager($app);
         });
     }
 }
